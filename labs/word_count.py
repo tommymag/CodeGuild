@@ -21,7 +21,7 @@
 #     print(word)
 
 file = open("peter_pan.txt", "r", encoding="utf-8")  #Opens the text file
-word_list = file.read().lower().replace('.', '').replace(',', '').split()  #Replaces characters and puts everythin into lower case
+word_list = file.read().lower().replace('.', '').replace(',', '').split()  #Replaces characters and puts everything into lower case
 wordcount={}
 for word in word_list:
     if word not in wordcount:
@@ -29,7 +29,7 @@ for word in word_list:
     else:
         wordcount[word] += 1
 
-for
+# for
 
 print(wordcount)
 # print (word,wordcount)
