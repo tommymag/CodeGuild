@@ -6,7 +6,7 @@
 # Hammer: 10PM - 4AM
 
 def HammerTime():
-    user_var = input("What time is it?")
+    user_var = input("What time is it? ")
     if user_var in ["7AM", "8AM", "9AM"]:
         print("Breakfast")
     if user_var in ["10AM", "11AM"]:
@@ -19,4 +19,6 @@ def HammerTime():
         print("Dinner is served!")
     if user_var in ["10PM", "11PM", "12AM", "1AM", "2AM", "3AM", "4AM"]:
         print("Hammer time!")
+    if user_var in ["5AM", "6AM"]:
+        print("What are you doing at this hour?!")
 HammerTime()

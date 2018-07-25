@@ -68,8 +68,8 @@
 
 # here is how we did it in class
 
-def pig_latin(word):
-# word = input('What word would you like translated?: ')
+def pig_latin():
+    word = input('What word would you like translated?: ')
     first_letter = word[0]
     left_over = word[1:]
 
@@ -80,4 +80,4 @@ def pig_latin(word):
     else:
         return '{}{}ay'.format(left_over, first_letter)
 
-print(pig_latin('hello'))
+print(pig_latin())

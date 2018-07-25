@@ -196,16 +196,28 @@
 #         date = input("When is the party?: ")
 #         location = input("Where is this bash taking place?: ")
 #
-#         print("Mr. and Mrs. {} cordially invite you for a night of {} and {} {}\n\n Serving: {} \n\n Honoring: {}\n\n Date: {} \n\n"
-#           "Location: {} \n\n Regrets only please \n\n Call: 867-5309 \n\n This party must be hosted by Tommy Tutone!!!".format(last_name,
+#         print("Mr. and Mrs. {} cordially invite you for a night of {} and {} {}\n\n Serving: {} \n\n Honoring: {}
+# \n\n Date: {} \n\n" "Location: {} \n\n Regrets only please \n\n Call: 867-5309 \n\n This party must be hosted by
+# Tommy Tutone!!!".format(last_name,
 #     verb, plural_noun, plural_noun, food, guest_of_honor, date, location,))
 # mad_lib
 
 
+def cost_to_paint():
 
+    width = int(input("Overall, just how much wall are we talking here?? \nWidth: "))
+    height = int(input("Height: "))
+    pp = float(input("How much is a gallon of your paint going for?: "))
 
+    gallons_needed = (width * height)/400
 
+    gnr = gallons_needed.ceil()
 
+    answer = str(gnr * pp)
+
+    print(gr)
+
+cost_to_paint()
 
 
 

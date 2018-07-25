@@ -1,3 +1,6 @@
+from Deck import Card, Deck
+
+
 # # Practice: Blackjack
 #
 # Let's start modeling a game of [blackjack](https://en.wikipedia.org/wiki/Blackjack).
@@ -99,4 +102,57 @@ class Hand:
 
 my_deck = Deck()
 print(my_deck)
+
+# what we worked on monday 7/9
+
+from Deck import Card, Deck
+
+class Hand:
+    def __init__(selfself, cards=none):
+        self.hand = []
+
+    def add(self, card):
+        self.hand.append(card)
+
+    def score(self):
+        score_conversion = {str(key): key for key in range (2,11)}
+        score_conversion.update{'A':1, 'J':10, 'Q':10, 'K':10}
+        points = 0
+        for card in self.hand:
+            points += score_conversion[card.rank]
+        return points
+
+class Dealer(Hand):
+    def __init__(self, cards=None):
+        super.__init__(cards)
+
+    def __repr__(self):
+        output = ''
+        for card in [1:self.hand]:
+            output += str(card) + '\n'
+        return output
+
+class Game:
+    def __init__(self, num_players=1):
+        self.deck = Deck()
+        self.dealer = Hand()
+        self.players = [Hand() for i in range (num_players)]
+        self.deck.shuffle()
+        for i in range(2):
+            self.dealer.add(deck.deal())
+            for j in range(num_players):
+                self,players[j].add(deck.deal())
+
+    def game_repl(self):
+        commands
+
+
+if __name__ == '__main__':
+    hand = Hand()
+    deck = Deck()
+    deck.shuffle()
+    hand.add(deck.deal)
+    hand.add(deck)
+    print(hand)
+    print(hand.score())
 
