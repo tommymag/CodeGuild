@@ -21,17 +21,18 @@
 #     print(word)
 
 file = open("peter_pan.txt", "r", encoding="utf-8")  #Opens the text file
-word_list = file.read().lower().replace('.', '').replace(',', '').split()  #Replaces characters and puts everything into lower case
+word_list = file.read().lower().replace('.', '').replace(',', '').replace('?', '').split()  #Replaces characters and puts everything into lower case
 wordcount={}
 for word in word_list:
     if word not in wordcount:
         wordcount[word] = 1
     else:
         wordcount[word] += 1
+# for value in wordcount:
+# 	if int(value) < 5:
+# 		del wordcount[key] 
 
-# for
-
-print(wordcount)
+print(wordcount['peter'])
 # print (word,wordcount)
 # file.close();
 

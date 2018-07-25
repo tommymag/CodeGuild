@@ -6,6 +6,7 @@ adjective2 = input("Finally one more adjective: ")
 
 print("I have eaten the '{}' that were in the '{}' and which you were probably saving for '{}'. Forgive me they were delicious so '{}'' and so '{}'.".format(noun1, place, verb, adjective1, adjective2))
 
+
 # from random import shuffle
 # def split_words(string):
 #     word_list = string.split(', ')

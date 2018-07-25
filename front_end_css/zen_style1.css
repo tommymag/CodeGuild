@@ -1,0 +1,60 @@
+/*
+#fff
+#004F2D
+#0A8754
+#508CA4
+#63D471
+#2F4858
+*/
+
+header {
+    background: #004F2D;
+    padding: 20px;
+    color: white;
+}
+
+.summary {
+    background: #0A8754;
+    padding: 20px;
+    color: white;
+}
+
+.preamble {
+    background: #508CA4;
+    padding: 20px;
+    color: white;
+
+}
+
+.design-selection {
+    background: #508CA4;
+    padding: 20px;
+    color: white;
+
+}
+
+.design-archives {
+    background: #0A8754;
+    padding: 20px;
+    color: white;
+
+}
+
+.zen-resources {
+    background: #004F2D;
+    padding: 20px;
+    color: white;
+
+}
+
+.main {
+    width: 75%;
+    margin: 40px auto;
+    border: solid #2F4858 2px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+a {
+    color: #63D471
+}

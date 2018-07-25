@@ -10,7 +10,7 @@ while change > 0:
     if change - 25 >= 0:
         quarters += 1
         change -= 25
-    elif change -10 >= 0:
+    elif change - 10 >= 0:
         change -= 10
         dimes += 1
     elif change - 5 >= 0:
