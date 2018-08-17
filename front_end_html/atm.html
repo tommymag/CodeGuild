@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ATM</title>
+</head>
+<body>
+	<h1 id="greeting">Welcome</h1>
+	<div>
+		<label for="username">Username</label>
+		<input type="text" id="username" />
+		<label for="pin">Pin</label>
+		<input type="password" id="pin" minlength="4" maxlength="4" pattern="\d+" />
+		<button id="user-btn">Submit</button>
+	</div>
+	<div id="atm-form" style="display:none">
+		<label for="amount">Amount</label>
+		<input type="number" id="amount" min='0' />
+		<button id="deposit">Deposit</button>
+		<button id="withdraw">Withdraw</button>
+		<button id="check-balance">View Balance</button>
+		<button id="check-history">View Transactions</button>
+		<button id="exit">Complete</button>
+	</div>
+	<h3 id="balance"></h2>
+	<h3 id="history"></h2>
+
+	<script>
+		function formatDate() {
+			let date = new Date(Date.now())
+			return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+		}
+
+		class ATM {
+			constructor(username, pin, balance=0) {
+				this.username = username
+				this.pin = pin
+				this.balance = balance
+				this.history = []
+			}
+			deposit(amount) {
+				let date = Date.now()
+				this.balance += amount
+				this.history.push(`${formatDate()}: Deposited ${amount}`)
+				return 'Success'
+			}
+			withdraw(amount) {
+				if (this.balance-amount >= 0) {
+					this.balance -= amount
+					this.history.push(`${formatDate()}: Withdrew ${amount}`)
+					return 'Success'					
+				} else {
+					return 'Failure: Insufficient funds'
+				}
+			}
+			checkBalance() {
+				return `${this.username}'s balance: ${this.balance}`
+			}
+			checkHistory() {
+				return 'Transactions:\n' + this.history.join('\n') 
+			}			
+		}
+
+		let atm 
+		let username
+		let pin
+		let greeting = document.querySelector('#greeting')
+		let atmForm = document.querySelector('#atm-form')
+		let amountArea = document.querySelector('#amount')
+		let balanceArea = document.querySelector('#balance')
+		let historyArea = document.querySelector('#history')
+
+		document.querySelector('#user-btn').addEventListener('click', () => {
+			username = document.querySelector('#username').value
+			pin = document.querySelector('#pin').value
+			greeting.innerText += ' ' + username + '!'
+			atm = new ATM(username, pin)
+			atmForm.style.display = 'block'
+		});
+
+		document.querySelector('#deposit').addEventListener('click', () => {
+			let amount = parseInt(amountArea.value)
+			console.log(amount)
+			let success = atm.deposit(amount)
+			balanceArea.innerText = success
+		});
+
+		document.querySelector('#withdraw').addEventListener('click', () => {
+			let amount = parseInt(amountArea.value)
+			let success = atm.withdraw(amount) 
+			balanceArea.innerText = success
+		});
+
+		document.querySelector('#check-balance').addEventListener('click', () => {
+			let balance = atm.checkBalance()
+			balanceArea.innerText = balance
+		});
+
+		document.querySelector('#check-history').addEventListener('click', () => {
+			let history = atm.checkHistory()
+			historyArea.innerText = history
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Todos</title>
+		{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'todosapp/css/style.css/' %}" />
+</head>
+<body>
+	<div id="app">
+		<h1>Todos:</h1>
+		<div class="holder">
+			<form action="{% url 'todos:add' %}" method="post">
+    {% csrf_token %}
+    <input type="text" class="main-input" name="todo_text" placeholder="To do..." />
+    <button type="submit">+</button>
+</form>
+<ul>
+	{% for todo_item in todos %}
+	<li>
+		<p {% if todo_item.completed %}
+			class="completed"
+		{% endif %}>{{ todo_item.todo_text }}</p>
+		<p>Completed? {{ todo_item.completed }}</p>
+		<p>Created on {{ todo_item.created_date }}</p>
+		<a href="{% url 'todos:delete'  pk=todo_item.id %}">
+			<button>x</button>
+		</a>
+					<a href="{% url 'todos:markdone'  todo_item.id %}">
+			<button>✓</button>
+		</a>
+	</li>
+{% endfor %}
+</ul>
+		</div>
+	</div>
+</body>
+</html>
