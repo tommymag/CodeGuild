@@ -9,9 +9,9 @@ header {
     grid-row: 1 / 1;
 }
 
-img {
-    margin: 0;
-}
+/*img {*/
+    /*margin: 0;*/
+/*}*/
 
 .box1 {
     grid-column: col 1 / span gutter 6;
@@ -20,9 +20,11 @@ img {
 
 #riley {
     background-image: url("../Images/riley_outside.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    height: 100px;
+    width: 80px
 }
 
 .box2 {
@@ -32,9 +34,11 @@ img {
 
 #riley_2 {
     background-image: url("../Images/riley_outside_2.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    height: 100px;
+    width: 80px;
 }
 
 .box3 {
@@ -44,9 +48,11 @@ img {
 
 #school {
     background-image: url("../Images/school.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    height: 100px;
+    width: 80px;
 }
 
 .box4 {
@@ -56,10 +62,11 @@ img {
 
 #baptism {
     background-image: url("../Images/baptism.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
-
+    height: 100px;
+    width: 80px;
 }
 
 .box5 {
@@ -69,11 +76,12 @@ img {
 
 #blazer_jumbotron {
     background-image: url("../Images/blazer_jumbotron.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    height: 100px;
+    width: 80px;
 }
-
 .box6 {
     grid-column: col 7 / span gutter 6;
     grid-row: row 6 / span gutter 2;
@@ -81,9 +89,11 @@ img {
 
 #background_oregon_building {
     background-image: url("../Images/background_oregon_building.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    height: 100px;
+    width: 80px;
 }
 
 .box7 {
@@ -93,19 +103,21 @@ img {
 
 #lighthouse {
     background-image: url("../Images/lighthouse.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    height: 100px;
+    width: 80px;
 }
-
 .box8 {
     grid-column: col 7 / span gutter 6;
     grid-row: row 8 / span gutter 4;
 }
-
 #lebron_laker {
     background-image: url("../Images/lebron_laker.jpg");
-    background-size: 100px 80px;
+    background-size: cover;
     background-repeat: no-repeat;
-
+    padding: 15px;
+    height: 100px;
+    width: 80px;
 }

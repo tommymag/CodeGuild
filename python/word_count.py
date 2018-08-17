@@ -1,67 +1,54 @@
 # # Lab: Word Count
-#
-# ###### Delivery Method: Prompt Only
-#
 
-# Write a python module to analyze a given text file containing a book for is vocabulary frequency and display the most frequent words to the user in the terminal.
-#
-# ------------------------
-#
-# #### Instructions
-#
-# Find a book on [Project Gutenberg](http://www.gutenberg.org).
+# Find a book on Project Gutenberg.
 # Download it as a UTF-8 text file.
-#
-# 1. Open the file and deal with any decoding error that arise.
 
-# with open("peter_pan.txt", "r", encoding="utf-8") as neverland:
-#     lines = neverland.read().split()
-#
-# for word in lines:
-#     print(word)
+# Open the file.
+# Make everything lowercase, strip punctuation, split into a list of words.
+# Your dictionary will have words as keys and counts as values. If a word isn’t in your dictionary
+# yet, add it with a count of 1. If it is, increment its count.
+# Print the most frequent top 10 out with their counts. You can do that with the code below.
 
-file = open("peter_pan.txt", "r", encoding="utf-8")  #Opens the text file
-word_list = file.read().lower().replace('.', '').replace(',', '').replace('?', '').split()  #Replaces characters and puts everything into lower case
-wordcount={}
+# # word_dict is a dictionary where the key is the word and the value is the count
+# words = list(word_dict.items()) # .items() returns a list of tuples
+# words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+# for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+#     print(words[i])
+
+
+
+file = open("../text/peter_pan.txt", "r", encoding="utf-8")  # Opens the text file
+word_list = file.read().lower().replace('.', '').replace(',', '').replace('?',
+                                                                          '').split()  # Replaces characters and puts everything into lower case
+word_dict = {}
+stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your',
+              'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers',
+              'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what',
+              'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were',
+              'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a',
+              'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at',
+              'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during',
+              'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on',
+              'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when',
+              'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other',
+              'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too',
+              'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'd', 'll', 'm',
+              'o', 're', 've', 'y', 'ain', 'aren', 'couldn', 'didn', 'doesn', 'hadn', 'hasn',
+              'haven', 'isn', 'ma', 'mightn', 'mustn', 'needn', 'shan', 'shouldn', 'wasn',
+              'weren', 'won', 'wouldn', '“i']
+
 for word in word_list:
-    if word not in wordcount:
-        wordcount[word] = 1
-    else:
-        wordcount[word] += 1
-# for value in wordcount:
-# 	if int(value) < 5:
-# 		del wordcount[key] 
+    if word not in stop_words:
+        if word not in word_dict:
+            word_dict[word] = 1
+        else:
+            word_dict[word] += 1
 
-print(wordcount['peter'])
-# print (word,wordcount)
-# file.close();
+words = list(word_dict.items())
+words.sort(key=lambda tup: tup[1], reverse=True)
+for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+    print(words[i])
 
-# 1.  Normalize all of the words so differences in capitalization and punctuation attached to words don't affect the counts.
-#
-# 1.  Count how often each unique word is used, then print the most frequent top 10 out with their counts.
-#
-# 1. Count how often each unique pair of words is used, then print the most frequent top 10 out with their counts.
-#
-#
-#
-# --------------------------------------------------------
-#
-# #### Advanced
-#
-# 1. Make a command line tool with the `sys.argv`.  Allow the the user to pass in the filename to a `.txt` file when execiting your program.  Use the `sys.argv` to parse the filename to use for the analysis.
-#
-#
-# ---------------------------------------------------------
-#
-# #### Super Advanced
-#
-# 1. Allow the user to enter a word and get the most likely words to follow the given word.  Store the pair counts as a dict of dicts, where the first key is the first word in the pair and the second key is the second word.
-#     ```
-#     Enter Query Word > Mr.
-#     The most likely bi-gram pair starting with "Mr." is "Mr. Darcy".
-#     ```
-#
-# 1. Redo the pair counts: normalize the probabilities in the inner dict by the count of pairs that start with the first word.
-#
-# 1. Chain together that ability to generate random sentences, one word at a time, from a given starting word.
-# This is a language model.
+
+
+    #
