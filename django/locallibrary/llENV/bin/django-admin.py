@@ -1,4 +1,4 @@
-#!/Users/thomasmagnuson/Documents/PDXCodeGuild/labs/django/locallibrary/llENV/bin/python3.6
+#!/Users/thomasmagnuson/Documents/PDXCodeGuild/labs/django/locallibrary/llENV/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

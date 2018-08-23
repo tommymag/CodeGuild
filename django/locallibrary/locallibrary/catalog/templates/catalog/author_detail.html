@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+   <h1>Author: {{ author }}</h1>
+
+  <p><strong>Books</strong> 
+{% if author.books %}
+<ul>
+	{% for book in author.books.all %}
+
+<li>
+  	<a href="{% url 'books' %}">{{ book.title }}</a></p> <!-- author detail link not yet defined -->
+  
+  </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>This author has no books registered.</p>
+  {% endif %} 
+ 
+({{ author.date_of_birth }} - {{author.date_of_death}})
+
+
+{% endblock %}
+
+
+
+
+
+{# first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    date_of_birth = models.DateField(null=True, blank=True)
+    date_of_death = models.DateField('Died', null=True, blank=True)
+
+  #}
