@@ -4,7 +4,7 @@
    <h1>Author: {{ author }}</h1>
 
   <p><strong>Books</strong> 
-{% if author.books %}
+{% if author.books.all %}
 <ul>
 	{% for book in author.books.all %}
 
@@ -18,7 +18,17 @@
     <p>This author has no books registered.</p>
   {% endif %} 
  
-({{ author.date_of_birth }} - {{author.date_of_death}})
+({{ author.date_of_birth }} - {% if author.date_of_death %} 
+    {{author.date_of_death}} )
+{% else %} 
+  Present)
+{% endif %}
+</p>
+
+{% if perms.catalog.can_mark_returned %}<br><br><a href="{% url 'author_delete' author.pk %}">Delete Author</a>  {% endif %}
+{% if perms.catalog.can_mark_returned %}<br><a href="{% url 'author_update' author.pk %}">Update Author</a>  {% endif %}
+      </li>
+
 
 
 {% endblock %}

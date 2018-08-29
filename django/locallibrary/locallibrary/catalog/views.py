@@ -150,7 +150,7 @@ from catalog.models import Author
 class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
     fields = '__all__'
-    initial = {'date_of_death': '05/01/2018'}
+    initial = {'date_of_death': '12/25/1977'}
     permission_required = 'catalog.can_mark_returned'
 
 class AuthorUpdate(PermissionRequiredMixin, UpdateView):
@@ -163,17 +163,34 @@ class AuthorDelete(PermissionRequiredMixin, DeleteView):
     success_url = reverse_lazy('authors')
     permission_required = 'catalog.can_mark_returned'
 
-# class BookCreate(PermissionRequiredMixin, CreateView):
-#     model = Book
-#     fields = '__all__'
-#     permission_required = 'catalog.can_mark_returned'
+class BookCreate(PermissionRequiredMixin, CreateView):
+    model = Book
+    fields = '__all__'
+    permission_required = 'catalog.can_mark_returned'
 
-# class BookUpdate(PermissionRequiredMixin, UpdateView):
-#     model = Book
-#     fields = '__all__'
-#     permission_required = 'catalog.can_mark_returned'
+class BookUpdate(PermissionRequiredMixin, UpdateView):
+    model = Book
+    fields = '__all__'
+    permission_required = 'catalog.can_mark_returned'
 
-# class BookDelete(PermissionRequiredMixin, DeleteView):
-#     model = Book
-#     success_url = reverse_lazy('books')
-#     permission_required = 'catalog.can_mark_returned'
+class BookDelete(PermissionRequiredMixin, DeleteView):
+    model = Book
+    success_url = reverse_lazy('books')
+    permission_required = 'catalog.can_mark_returned'
+
+class BookInstanceCreate(PermissionRequiredMixin, CreateView):
+    model = BookInstance
+    fields = '__all__'
+    success_url = reverse_lazy('books')
+    permission_required = 'catalog.can_mark_returned'
+
+class BookInstanceUpdate(PermissionRequiredMixin, UpdateView):
+    model = BookInstance
+    fields = '__all__'
+    success_url = reverse_lazy('all-borrowed')
+    permission_required = 'catalog.can_mark_returned'
+
+class BookInstanceDelete(PermissionRequiredMixin, DeleteView):
+    model = BookInstance
+    success_url = reverse_lazy('books')
+    permission_required = 'catalog.can_mark_returned'

@@ -7,9 +7,9 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('books/', views.BookListView.as_view(), name='books'),
-    path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
+    path('book/<int:pk>/', views.BookDetailView.as_view(), name='book-detail'),
     path('authors/', views.AuthorListView.as_view(), name='authors'),
-    path('author/<int:pk>', views.AuthorDetailView.as_view(), name='author-detail'),
+    path('author/<int:pk>/', views.AuthorDetailView.as_view(), name='author-detail'),
 ]
 
 
@@ -31,9 +31,15 @@ urlpatterns += [
 ]
 
 
-# # Add URLConf to create, update, and delete books
-# urlpatterns += [  
-#     path('book/create/', views.BookCreate.as_view(), name='book_create'),
-#     path('book/<int:pk>/update/', views.BookUpdate.as_view(), name='book_update'),
-#     path('book/<int:pk>/delete/', views.BookDelete.as_view(), name='book_delete'),
-# ]
+# Add URLConf to create, update, and delete books
+urlpatterns += [  
+    path('book/create/', views.BookCreate.as_view(), name='book_create'),
+    path('book/<uuid:pk>/update/', views.BookUpdate.as_view(), name='book_update'),
+    path('book/<int:pk>/delete/', views.BookDelete.as_view(), name='book_delete'),
+]
+
+urlpatterns += [  
+    path('book/instance/create/', views.BookInstanceCreate.as_view(), name='book_instance_create'),
+    path('book/<uuid:pk>/instance/update/', views.BookInstanceUpdate.as_view(), name='book_instance_update'),
+    path('book/<uuid:pk>/instance/delete/', views.BookInstanceDelete.as_view(), name='book_instance_delete'),
+]

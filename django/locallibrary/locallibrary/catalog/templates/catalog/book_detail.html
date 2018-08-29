@@ -19,7 +19,25 @@
         <p><strong>Due to be returned:</strong> {{copy.due_back}}</p>
       {% endif %}
       <p><strong>Imprint:</strong> {{copy.imprint}}</p>
-      <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+      <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p> {% if perms.catalog.can_mark_returned %}
+<a href="{% url 'book_instance_delete' copy.id %}">Delete Copy </a>  {% if perms.catalog.can_mark_returned %}<br><a href="{% url 'book_instance_update' copy.pk %}">Return</a> (Update Book Copy) {% endif %}{% endif %}
+
+
+
+
+
+
     {% endfor %}
+
+
+
+
+
+
+ 
+
+</form>
+
   </div>
+
 {% endblock %}
