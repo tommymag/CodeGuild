@@ -22,13 +22,6 @@ def index(request):
     
     # The 'all()' is implied by default.    
     num_authors = Author.objects.count()
-    
-    context = {
-        'num_books': num_books,
-        'num_instances': num_instances,
-        'num_instances_available': num_instances_available,
-        'num_authors': num_authors,
-    }
 
         # Number of visits to this view, as counted in the session variable.
     num_visits = request.session.get('num_visits', 0)

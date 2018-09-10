@@ -4,7 +4,7 @@ import random
 
 # otherwise OOPDF
 
-dict_of_terms_easy = {  # Will need to figure out case sensitve - levels of difficulty
+dict_of_terms_acronym = {  # Will need to figure out case sensitve - levels of difficulty
 
     "API" : "Application Programming Interface",
     "BASh" : "Born Again Shell",
@@ -22,12 +22,12 @@ dict_of_terms_easy = {  # Will need to figure out case sensitve - levels of diff
     "HDD" : "Hard Disk Drive",
     "OS" : "Operating System",
     "SSD" : "Solid State Drive",
-    "JPEG" : "Joint Photograpic Experts Group",
-    "ORM" : "Object relational mapping",                # research moore on this
-    "Term" : "Definition",
-    "Term" : "Definition",
-    "Term" : "Definition",
-    "Term" : "Definition",
+    "JPEG" : "Joint Photographic Experts Group",
+    "ORM" : "Object Relational Mapping",                # research moore on this
+    "DBMS" : "Database Management system",
+    "CPU" : "Central Processing Unit",
+    "IT" : "Information Technology",                        # First 20 are in the admin!
+    "WSGI" : "Web Server Gateway Interface",
     "Term" : "Definition",
     "Term" : "Definition",
     "Term" : "Definition",
@@ -40,7 +40,7 @@ dict_of_terms_easy = {  # Will need to figure out case sensitve - levels of diff
     "Term" : "Definition"    
 }
 
-dict_of_terms_medium = {
+dict_of_terms_easy = {
 
 
     "Directory" : "A file system cataloging structure which contains references to other computer files, and possibly other directories",
@@ -52,17 +52,15 @@ dict_of_terms_medium = {
     "Grid" : "An intersecting set of horizontal and vertical lines",
     "Pixel" : "The smallest controllable element of a picture represented on the screen",
     "Query" : "A request for information from a database",
-    "IDE" : "Integrated",
-    "OOP" : "Object Oriented Programming",
+    "Django" : "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design",
+    "Term" : "",
     "Class" : "Pre-object; list of attributes",
     "Variable" : "Data represented",
     "Module" : "Part of a program that contains one or more routines",
-    "<head>" : "HTML; this element is a container for metadata and is placed between the <html> tag and the <body> tag",
-    "<html>" : "The <html> tag tells the browser that this is an HTML document. The <html> tag represents the root of an HTML document. The <html> tag is the container for all other HTML elements",
     "Javascript" : "High level interpretive. ",
-    "query" : "Definition",
-    "Term" : "Definition",
-    "Term" : "Definition",
+    "Crash" : "an unexpected termination of a process",
+    "Process" : "a program that is running on your computer",
+    "JSON" : "JavaScript Object Notation",
     "Term" : "Definition",
     "Term" : "Definition",
     "Term" : "Definition",
@@ -78,12 +76,51 @@ dict_of_terms_medium = {
 
 }
 
-dict_of_terms_hard = {. # multiple choice during game
+dict_of_terms_medium = { # unsure of how to create as of yet
 
     "The Document Object Model (DOM)" : "an object-oriented representation of the web page, which can be modified with a scripting language such as JavaScript represents the document as nodes and objects",
     "Web Page" : "a document",
-    "Array" : "Arrays are ordered, linear collections of elements",
+    "Array" : "ordered, linear collections of elements",
+    "<head>" : "HTML; this element is a container for metadata and is placed between the <html> tag and the <body> tag",
+    "<html>" : "The <html> tag tells the browser that this is an HTML document. The <html> tag represents the root of an HTML document. The <html> tag is the container for all other HTML elements",
+    "Modular Programming" : "a software design technique that emphasizes separating the functionality of a program into independent peices such that each part contains everything necessary to execute only one aspect of the desired functionality.",
+    "JSON" : " an open standard format that allows data to be transferred across the web by using attribute-value pairs",
     "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition",
+    "Term" : "Definition"
+}
+
+dict_of_terms_hard = {
+    "WSGI" : "a simple calling convention for web servers to forward requests to web applications or frameworks written in Python",
     "Term" : "Definition",
     "Term" : "Definition",
     "Term" : "Definition",
@@ -117,6 +154,7 @@ dict_of_terms_hard = {. # multiple choice during game
     "Term" : "Definition",
     "Term" : "Definition",
     "Term" : "Definition"
+
 }
 
 while True:

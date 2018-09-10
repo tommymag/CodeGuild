@@ -1,0 +1,19 @@
+{% extends "OOPDFapp/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<ul style="display:none">
+{% for flashcard in flashcards %}
+	<li>{{flashcard.term}} : {{flashcard.definition}}</li>
+{% endfor %}	
+</ul>
+
+
+<div id="flashcard-container"></div>
+<button id="previous-card-btn">Previous</button> <button id="next-card-btn">Next</button>
+<br><button id ="flip-card-btn">Flip
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="{% static 'OOPDFapp/js/script.js' %}"></script>
+{% endblock scripts %}

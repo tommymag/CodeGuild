@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class URL(models.Model):
-	url = models.CharField(max_length=500, unique=True)
-	code = models.CharField(max_length=10, unique=True)
+	url_long = models.CharField(max_length=250, unique=True)
+	url_short = models.CharField(max_length=10, primary_key=True)
 
 	def __str__(self):
 		return url

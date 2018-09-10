@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
 
-urls_app = 'urls_app' # for namespacing
+app_name = 'urlsapp' # for namespacing
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('redirect/<url_short>/', views.redirect, name='redirect'),
+    path('redirect_typed/', views.redirect_typed, name='redirect_typed'),
 ]
