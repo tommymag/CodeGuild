@@ -7,14 +7,12 @@
 {% if blogs %}
 	
 {% for blog in blogs %}
-  <a href="{% url 'blog_content' blog.pk %}">{{ blog.blog_title }}</a> - <i>{{blog.owner}}</i>
-<br> <div class='tip'>Talking about:</div>
-
-
+  <a href="{% url 'blog_app:blog_content' blog.blog_slug %}">{{ blog.blog_title }}</a> - <i>{{blog.owner}}</i>
+<br> <div class='tip'>Summary:</div>
 
 {{blog.summary}}<br>
 
-WTF='{{blog.blog_slug}}'<br/><br>
+Slug='{{blog.blog_slug}}'<br/><br>
 {% endfor %}
 
 <br>

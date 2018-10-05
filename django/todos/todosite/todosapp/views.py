@@ -7,9 +7,15 @@ from .forms import TodoForm, TodoModelForm
 
 # Create your views here.
 def index_view(request):
-# login page
-
-
+    if request.user.is_authenticated:
+        todo_list = Todo.objects.all()
+    else:
+        todo_list = []
+    context = {
+        'todos': todo_list,
+        'form_type': 'html_form',
+    }
+    return render(request, 'todosapp/index_template.html', context)
 
 def todo_list_view(request):
 
@@ -23,7 +29,7 @@ def todo_list_view(request):
     }
     return render(request, 'todosapp/index_template.html', context)
 
-# @login_required
+@login_required
 def add_view(request):
     if request.method == 'POST':
         text = request.POST['todo_text']
@@ -31,13 +37,13 @@ def add_view(request):
         new_todo.save()
     return redirect('todos:index_path')
 
-# @login_required
+@login_required
 def delete(request, pk):
     todo = get_object_or_404(Todo, pk=pk)
     todo.delete()
     return redirect('todos:index_path')
 
-# @login_required
+@login_required
 def markdone(request, pk):
     todo = get_object_or_404(Todo, pk=pk)
     todo.completed = not todo.completed
@@ -67,7 +73,7 @@ def index_with_django_form(request):
 
 # # Index using Django ModelForm
 def index_with_model_form(request):
-    if request.user.is_authenticated:
+    if request.user.is_auhenticated:
         todo_list = Todo.objects.filter(user=request.user).order_by('-created_date')    
         if request.method == 'POST':
             form = TodoModelForm(request.POST)

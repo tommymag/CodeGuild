@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from blog_app.forms import CreateBlogForm
 from blog_app.models import Blog
 
@@ -26,8 +26,28 @@ def blog_create(request):
 			return HttpResponseRedirect('/')
 	return render(request, 'create.html', {'form': form})
 
-def blog(request):
+def blog(request, slug):
+	blog = get_object_or_404(Blog, blog_slug=slug)
+	return render(request, 'blog_content.html', {'blog':blog})
 
-	return render(request, 'blog_content.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

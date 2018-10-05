@@ -10,6 +10,7 @@ class Blog(models.Model):
 	blog_slug = models.SlugField()
 	blog_title = models.CharField(max_length=255, )
 	summary = models.TextField()
+	blog_text = models.TextField(default="I am writing in my blog")
 
 	def __str__(self):
 		"""String for representing the Model object."""
