@@ -5,6 +5,9 @@ app_name = 'OOPDFapp' # for namespacing
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('flashcards/', views.flashcard_json, name='flashcard_api')
-    
-]
+    path('study/', views.study, name='study'),
+    path('flashcards/', views.flashcard_json, name='flashcard_api'),
+    path('intro/', views.intro, name='intro'),
+    path('game/', views.game, name='game'),
+    path('quit/', views.quit, name='quit'),
+    ]

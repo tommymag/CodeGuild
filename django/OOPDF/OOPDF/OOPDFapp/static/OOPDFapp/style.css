@@ -1,0 +1,102 @@
+body{
+	background: black; 
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body, html{
+	height: 100%
+}
+
+@font-face {
+    font-family: 'bubbleboddy'; /*a name to be used later*/
+    src: url('fonts/zetafonts_bubbleboddy/Bubbleboddy-FatTrial.ttf'); /*URL to font*/
+}
+
+
+h1 {
+	font-size: 4em;
+	color: #00ff00;
+	white-space: nowrap;
+	width: 100%;
+	animation: unset;
+	overflow: overlay;
+}
+
+h2{
+	font-family: bubbleboddy;
+	font-size: 7em;
+	color: #00ff00;
+}
+
+#button{
+	background-color: #000;
+		color: #00ff00;
+		font-family: "console";
+		border: solid;
+		font-size: 2.5em;
+		margin: 10px;
+}
+
+#logooopdfblue{
+	color: #00ffff;
+}
+
+#logooopdfpink{
+	color: #ff00ff;
+}
+body {
+		background-color: #000;
+		color: #00ff00;
+		font-family: "console";
+}
+
+
+
+
+@keyframes typing {
+	from{
+	width: 0;
+}
+}
+
+.cursor{
+	animation: blink .6s infinite;
+}
+
+@keyframes blink{
+	to{
+		opacity: 0;
+	}
+}
+
+#centerdiv{
+	margin: auto;
+
+}
+/*
+a, a:hover {
+	background-color: black;
+	width: 25%;
+	font-size: 8em;
+	display: flex;								<for hovering anmation>
+	justify-content: center;
+	vertical-align: center;
+	border: solid;
+	color: #00ff00;
+	text-decoration: none;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+

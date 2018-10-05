@@ -1,0 +1,56 @@
+{% extends "OOPDFapp/base_generic_game.html" %}
+{% load static %}
+{% block styles %}
+	
+	<link rel='stylesheet' href="{% static 'OOPDFapp/stylegame.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+<div class='mainwrapper'>
+
+<div class="sidebar-nav">
+		<ul>	
+		   <li><a id='quit' href="{% url 'OOPDFapp:quit' %}">Quit</a></li>
+		</ul>
+</div>
+
+<div class ="terminal">
+	<div class="headers">
+	<div class ='score-headers startstatus'>
+	<h1><span id='logooopdfblue'>OO</span><span id='logooopdfpink'>PDF</span></h1>
+	</div>
+
+	<div class ='score-headers onewrong'>
+	<h1>You're still in this!</h1>
+	<h2>/</h2></div>	
+
+	<div class ='score-headers twowrong'>
+		<h1>Uhhh.. You are fading...</h1>
+	<h2>//</h2></div>	
+</div>
+
+	<div id='question'>
+	</div>
+	 
+
+
+	<button id="select-btn-a">A</button> <button id ="select-btn-b">B</button> <button id="select-btn-c">C</button> <button id="select-btn-d">D</button>
+</div>
+</div>
+
+<div class="gameover">
+	<div class ="score-headers Mortem">
+		<h1 class='present'><span id='logooopdfblue'>OO</span><span id='logooopdfpink'>PDF</span></h1>
+		
+		<a href="{% url 'OOPDFapp:game' %}">						
+	<button id='button'>Play Again</button>
+</a>
+	</div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+	<script type="text/javascript" src="{% static 'OOPDFapp/js/game-script.js' %}"></script>
+{% endblock scripts %}
+

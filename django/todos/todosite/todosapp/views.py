@@ -7,6 +7,12 @@ from .forms import TodoForm, TodoModelForm
 
 # Create your views here.
 def index_view(request):
+# login page
+
+
+
+def todo_list_view(request):
+
     if request.user.is_authenticated:
         todo_list = Todo.objects.filter(user=request.user).order_by('-created_date')
     else:
@@ -17,7 +23,7 @@ def index_view(request):
     }
     return render(request, 'todosapp/index_template.html', context)
 
-@login_required
+# @login_required
 def add_view(request):
     if request.method == 'POST':
         text = request.POST['todo_text']
@@ -25,13 +31,13 @@ def add_view(request):
         new_todo.save()
     return redirect('todos:index_path')
 
-@login_required
+# @login_required
 def delete(request, pk):
     todo = get_object_or_404(Todo, pk=pk)
     todo.delete()
     return redirect('todos:index_path')
 
-@login_required
+# @login_required
 def markdone(request, pk):
     todo = get_object_or_404(Todo, pk=pk)
     todo.completed = not todo.completed

@@ -1,0 +1,157 @@
+body {
+		background-color: #000;
+		color: #00ff00;
+		font-family: "console";
+}
+@font-face {
+    font-family: 'bubbleboddy'; /*a name to be used later*/
+    src: url('fonts/zetafonts_bubbleboddy/Bubbleboddy-FatTrial.ttf'); /*URL to font*/
+}
+
+.terminal {
+		margin: auto;
+		width: 70%;
+
+	}
+
+#question {
+	font-size: 30px;
+	white-space: nowrap;
+	width: 100%;
+	animation: typing 7s steps(60, end);
+	overflow: hidden;
+	max-height: 50vh;
+}
+
+.startstatus{
+	display:block;
+	color: #00ff00;
+
+}
+
+#logooopdfblue{
+	color: #00ffff;
+}
+
+h1,h2{
+
+	font-family: bubbleboddy;
+}
+
+#logooopdfpink{
+	color: #ff00ff;
+}
+
+.onewrong{
+	display: none;
+	color: #00ffff ;
+}
+
+.twowrong{
+	display: none;
+	color: #ff00ff;
+
+}
+
+.Mortem {
+	display: none;
+	color: ;
+}
+
+
+
+@keyframes typing {
+	from{
+	width: 0;
+}
+}
+
+.cursor{
+	animation: blink .6s infinite;
+	font-size: 5em;
+	display: block;
+}
+
+@keyframes blink{
+	to{
+		opacity: 0;
+	}
+}
+
+#gotogame{
+	display: hidden;
+}
+
+#quit{
+	display: block;
+}
+
+#select-btn-a, #select-btn-b, #select-btn-c, #select-btn-d{
+	background-color: #000;
+		color: #00ff00;
+		font-family: "console";
+		border: solid;
+		font-size: 2.5em;
+		margin: 10px;
+}
+
+#quit{
+	display: block;
+	color: #00ff00;
+}
+
+.sidebar-nav a{
+	margin: 0 10px;
+	background: #black;
+	border: solid;
+	color: black;
+	text-align:center;
+	font-size: 2em;
+}
+
+.sidebar-nav {
+	width: 12em;
+}
+
+.mainwrapper{
+	display: flex;
+	align-items: baseline;
+	padding: 25px;
+}
+
+h1{
+	margin-top: 0
+}
+
+li{
+	list-style: none;
+}
+
+#button{
+
+		background-color: #000;
+		color: #00ff00;
+		font-family: "console";
+		border: solid;
+		font-size: 2.5em;
+		margin: 10px;
+}
+
+.gameover{
+	text-align: center;
+
+}
+
+.present{
+
+	font-size: 6em
+}
+
+
+
+
+
+
+
+
+

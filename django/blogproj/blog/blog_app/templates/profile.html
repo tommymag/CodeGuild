@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+					<div class='login_status_wrapper'>
+			<b>Hello, <i>{{ user.get_username }}!</i></b>
+
+    {% if is_blogger %}
+	You Are a Blogger!
+{% endif %}
+
+{% if is_commenter %}
+	You Are a Commenter!
+{% endif %}
+
+{% else %}
+<b>NOT</b> authenticated
+</div>
+
+   {% endif %} 
+
+
+
+{% endblock %}

@@ -1,0 +1,97 @@
+body {
+		height: 100%;
+		width: 100%;
+		background-image: url('./images/cabinbg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+
+}
+
+.welcome{
+
+}
+
+.blackboard {
+		width: 640px;
+		min-height: 250px; 
+		max-height: 400px;
+		margin: 7% auto;
+		border: tan solid 12px;
+		border-top: #bda27e solid 12px;
+		border-left: #b19876 solid 12px;
+		border-bottom: #c9ad86 solid 12px;
+		box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782, 0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgba(0, 0, 0, 0.5);
+		background-color: #3B653D;
+		background-image: url("./images/chalkboard-blue.jpg");
+
+}
+
+
+
+#flashcard-container {
+		display: flex;
+		justify-content: center;
+		vertical-align: middle;
+
+}
+
+p {
+		text-align: center;
+		margin-bottom: 1em;
+		font-family: chalkduster;
+		font-size: 5em;
+		color: rgba(238, 238, 238, 0.7);
+}
+
+.vintage{
+	margin: auto;
+	display: flex;
+	width: 200px;
+}
+
+.vintage button, .sidebar-nav a{
+	margin: 0 10px;
+	background: #bda27e;
+	border: solid 1px;
+	color: black;
+}
+
+.sidebar-nav{
+	width: 8em;
+	text-align: center;
+}
+.sidebar-nav li{
+	list-style: none;
+}
+
+h1 {
+	margin: 0;
+	text-align: center;
+	color: #bda27e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

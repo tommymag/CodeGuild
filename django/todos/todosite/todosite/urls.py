@@ -18,7 +18,7 @@ from django.urls import path, include
 from todosite import views
 
 urlpatterns = [
-	path('todos/', include('todosapp.urls')), # app urls are relative to this path
+	path('', include('todosapp.urls')), # app urls are relative to this path
     path('admin/', admin.site.urls),
 	path('accounts/', include('django.contrib.auth.urls')),
 	path('accounts/register/', views.register, name='register'),

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Blog Site!!!</h1>
+{% if blogs %}
+	
+{% for blog in blogs %}
+  <a href="{% url 'blog_content' blog.pk %}">{{ blog.blog_title }}</a> - <i>{{blog.owner}}</i>
+<br> <div class='tip'>Talking about:</div>
+
+
+
+{{blog.summary}}<br>
+
+WTF='{{blog.blog_slug}}'<br/><br>
+{% endfor %}
+
+<br>
+  <a href="{% url 'blog_app:blog_create' %}">Create a blog</a>
+	
+
+{% endif %}
+
+
+
+{% endblock %}

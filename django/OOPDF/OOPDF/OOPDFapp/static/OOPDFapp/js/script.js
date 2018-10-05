@@ -1,12 +1,13 @@
 let flashcards = []
 let flashcardContainer = document.querySelector('#flashcard-container')
-let nextCardBtn = document.querySelector('#next-card-btn')
-let previousCardBtn = document.querySelector('#previous-card-btn')
-let flipCardbtn =document.querySelector('#flip-card-btn')
+// let nextCardBtn = document.querySelector('#next-card-btn')
+// let previousCardBtn = document.querySelector('#previous-card-btn')
+// let flipCardBtn = document.querySelector('#flip-card-btn')
+
 let currentCard = 0
 let isTerm = true
 
-fetch('flashcards/')
+fetch('http://localhost:8000/flashcards/')
 	.then(response => {
 		console.log(response)
 		return response.json()
@@ -17,10 +18,24 @@ fetch('flashcards/')
 	.then(responseJson => {
 		flashcards = JSON.parse(responseJson)
 		frontBuild(flashcards[currentCard])
-		nextCardBtn.addEventListener('click', nextCard)
-		previousCardBtn.addEventListener('click', previousCard)
-		flipCardbtn.addEventListener('click', flipCard)
+		
+		document.getElementById('next-card-btn').addEventListener('click', () => {
+		  nextCard()
+		})
+		document.getElementById('previous-card-btn').addEventListener('click', () => {
+  		previousCard()
+  		})
+		document.getElementById('flip-card-btn').addEventListener('click', () => {
+		  flipCard()
+		})
+
+		// nextCardBtn.addEventListener('click', nextCard)
+		// previousCardBtn.addEventListener('click', previousCard)
+		// flipCardBtn.addEventListener('click', flipCard)
 	})	
+
+
+
 
 function frontBuild(flashcard) {
 	console.log(flashcard)
@@ -42,6 +57,7 @@ function flipCard() {
 		backBuild(flashcard)
 	} else {
 		frontBuild(flashcard)
+
 	}
 	isTerm = !isTerm
 }
@@ -63,8 +79,6 @@ function previousCard() {
 		frontBuild(flashcards[currentCard])
 	}
 }
-
-
 
 
 

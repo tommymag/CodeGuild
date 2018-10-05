@@ -28,7 +28,7 @@ dict_of_terms_acronym = {  # Will need to figure out case sensitve - levels of d
     "CPU" : "Central Processing Unit",
     "IT" : "Information Technology",                        # First 20 are in the admin!
     "WSGI" : "Web Server Gateway Interface",
-    "Term" : "Definition",
+    "VCS" : "Version Control System",
     "Term" : "Definition",
     "Term" : "Definition",
     "Term" : "Definition",
@@ -39,6 +39,10 @@ dict_of_terms_acronym = {  # Will need to figure out case sensitve - levels of d
     "Term" : "Definition",
     "Term" : "Definition"    
 }
+
+for (key, val in dict_of_terms_acronym.items()):
+    fc = FlashCard(term=key, definition=val)
+    fc.save()
 
 dict_of_terms_easy = {
 
@@ -53,7 +57,6 @@ dict_of_terms_easy = {
     "Pixel" : "The smallest controllable element of a picture represented on the screen",
     "Query" : "A request for information from a database",
     "Django" : "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design",
-    "Term" : "",
     "Class" : "Pre-object; list of attributes",
     "Variable" : "Data represented",
     "Module" : "Part of a program that contains one or more routines",

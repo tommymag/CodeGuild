@@ -1,19 +1,37 @@
-{% extends "OOPDFapp/base_generic.html" %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  {% block title %}<title>OOPDF</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% block styles %}
+<link rel='stylesheet' href="{% static 'OOPDFapp/style.css' %}">
+  {% endblock styles %}
+  <!-- 
+  Add additional CSS in static file 
 
-{% block content %}
-<ul style="display:none">
-{% for flashcard in flashcards %}
-	<li>{{flashcard.term}} : {{flashcard.definition}}</li>
-{% endfor %}	
-</ul>
+  
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+ -->
+</head>
+<body>
+	<div id='centerdiv'>
+<h1>How Do You...<span class="cursor">|</span></h1> <!-- You got this Are You Sure -->
+<h2><span id='logooopdfblue'>OO</span><span id='logooopdfpink'>PDF</span></h2>								<!-- STY.lE -->
 
 
-<div id="flashcard-container"></div>
-<button id="previous-card-btn">Previous</button> <button id="next-card-btn">Next</button>
-<br><button id ="flip-card-btn">Flip
-{% endblock %}
-
-{% block scripts %}
-	<script type="text/javascript" src="{% static 'OOPDFapp/js/script.js' %}"></script>
-{% endblock scripts %}
+</br>
+<a href="{% url 'OOPDFapp:study' %}">						
+	<button id='button'>Study</button>
+</a>
+<a href="{% url 'OOPDFapp:game' %}">						
+	<button id='button'>Game</button>
+</a>
+</div>
+</body>
+</html>
